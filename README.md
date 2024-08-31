@@ -1,5 +1,5 @@
 # Transformer
-Implement transformer
+Implement transformer, here is the original [paper](paper/transformer_paper.pdf).
 
 ## Input Embedding
 Turn each token into an embedding. For instance, each token has an embedding of 512.
@@ -12,6 +12,12 @@ So that, we understand some words are "close" and some words are "distant".
   PE(pos, 2i) = sin(pos / 10000<sup>2i/d_model</sup>)<br>
   PE(pos, 2i+1) = cos(pos / 10000<sup>2i/d_model</sup>)
 </p>
+
+- pos: position of the token in the sentence
+- i: index of the embedding number
+- PE(0, 10): 
+  - The positional encoding of the first token in the sentence
+  - The positional encoding of the 10th number in its vector.
 
 * We only compute positional encoding once, then re-use for training or inference.
 
